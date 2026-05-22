@@ -1,7 +1,10 @@
 const MAX_SCORE: u32 = 100_000;
 
 pub fn varlen() {
+    println!("---------------------\n Print \n-----------------------");
     println!("hellow uwu");
+    println!("---------------------\n Variables \n-----------------------");
+
     let x = 5;
     println!("x is: {x}");
     // x = 6; // ERROR: cannot assign twice
@@ -16,6 +19,7 @@ pub fn varlen() {
     let spaces = "   "; // &str
     let spaces = spaces.len(); // usize — different type!
     println!("spaces: {spaces}");
+    println!("---------------------\n Data Types \n-----------------------");
 
     let a: i32 = -42;
     let b: u64 = 1_000_000;
@@ -34,6 +38,7 @@ pub fn varlen() {
     let zeros: [i32; 5] = [0; 5];
     println!("{:?}", zeros);
     println!("{}", months[0]);
+    println!("---------------------\n Functions \n-----------------------");
 
     greet("Goga G!");
 
@@ -41,6 +46,7 @@ pub fn varlen() {
     println!("3 + 7 = {result}"); // 10
     //
     println!("{}", absolute_value(-5)); // 5
+    println!("---------------------\n Control if-else  loops \n-----------------------");
 
     let number = 7;
     if number < 5 {

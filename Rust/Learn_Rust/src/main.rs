@@ -1,5 +1,6 @@
 mod exam1_pf;
 mod mian;
+mod phase2mian;
 fn main() {
     println!("Hello, world!");
     let c = 44;
@@ -18,4 +19,5 @@ fn main() {
     println!("{c}");
     mian::varlen();
     exam1_pf::moin();
+    phase2mian::moin();
 }
