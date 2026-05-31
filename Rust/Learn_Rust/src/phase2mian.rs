@@ -1,3 +1,8 @@
+use std::fs;
+use std::io;
+fn read_file(path: &str) -> Result<String, io::Error> {
+    fs::read_to_string(path)
+}
 struct User {
     name: String,
     email: String,
@@ -19,7 +24,7 @@ impl Rectangle {
     }
 }
 pub fn moin() {
-    println!("------------------------------\n Ownership \n ------------------------------");
+    println!("------------------------------\n Ownership \n------------------------------");
     let s1 = "hello";
     println!("{s1} world");
     let s2 = s1;
@@ -75,8 +80,25 @@ pub fn moin() {
         Some(result) => println!("Result: {result}"),
         None => println!("Division by zero!"),
     }
+    println!(
+        "------------------------------\n Exeption handeling \n------------------------------"
+    );
+    match read_file("hello.txt") {
+        Ok(content) => println!("{content}"),
+        Err(e) => println!("{e}"),
+    };
+    match read_username() {
+        Ok(name) => println!("hello {name}"),
+        Err(e) => eprintln!("Failed {e}"),
+    }
+    let n: i32 = "42".parse().expect("should be a valid number!");
+    println!("{n}");
 }
 
+fn read_username() -> Result<String, io::Error> {
+    let content = fs::read_to_string("username.txt")?;
+    Ok(content.trim().to_string())
+}
 enum Message {
     Quit,
     Move { x: i32, y: i32 },
